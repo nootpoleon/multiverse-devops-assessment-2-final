@@ -5,6 +5,7 @@ from input import get_csv
 from input import drop_duplicate
 from input import drop_null
 from input import capitalise_username 
+from input import ans3valid
 
 file = open('results.csv')
 

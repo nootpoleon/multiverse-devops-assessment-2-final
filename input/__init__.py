@@ -41,25 +41,15 @@ def capitalise_username(file):
 
 capitaliseddata = capitalise_username(file)
 
-def test_validans3():
-
-  #Arrange
-  passresult = len(ans3valid(capitaliseddata)) -1 #bring in the code, with the length
-
-  #Act
-  df = capitaliseddata #take the file
-  noblankentries = []
-  for row in capitaliseddata:
-        if all(cell != '' for cell in row): # append rows with no blanks at all
-            noblankentries.append(row)
+def ans3valid(file):
+  noblanks =[]
+  for i in capitaliseddata:
+      if len([x for x in i if x != '']) == 6: #removes any line nan entries
+          noblanks.append(i)
   
-  noblankentries = pd.DataFrame(noblankentries) #dataframe declare
-  noblankentries.columns=noblankentries.iloc[0] #column name find
-  column_headers = list(noblankentries.columns.values) #column name declare
-  noblankentries = noblankentries.tail(-1) #remove first row (old headers)
-  noblankentries = np.array(noblankentries) #cast as array
-  isvalid_ans3 = [x for x in noblankentries[0:] if int(x[5]) == 1 or int(x[5]) == 2 or int(x[5]) == 3 or int(x[5]) == 4 or int(x[5]) == 5 or int(x[5]) == 6 or int(x[5]) == 7 or int(x[5]) == 8 or int(x[5]) == 9 or int(x[5]) == 10] #check answers
-  output = len(isvalid_ans3) #check the length of the dataframe
+  noblanks = np.array(noblanks)
   
-  #Assert
-  assert passresult == output
+  valid_ans3 = [x for x in noblanks[1:] if int(x[5]) > 0 and int(x[5])<11]
+  valid_ans3.insert(0, noblanks[0])
+  valid_ans3 = np.array(valid_ans3)
+  return valid_ans3
