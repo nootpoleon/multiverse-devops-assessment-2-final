@@ -1,6 +1,5 @@
 import csv
 import numpy as np
-import pandas as pd
 
 file = open('results.csv')
 
@@ -40,16 +39,3 @@ def capitalise_username(file):
   return capitalise
 
 capitaliseddata = capitalise_username(file)
-
-def ans3valid(file):
-  noblanks =[]
-  for i in capitaliseddata:
-      if len([x for x in i if x != '']) == 6: #removes any line nan entries
-          noblanks.append(i)
-  
-  noblanks = np.array(noblanks)
-  
-  valid_ans3 = [x for x in noblanks[1:] if int(x[5]) > 0 and int(x[5])<11]
-  valid_ans3.insert(0, noblanks[0])
-  valid_ans3 = np.array(valid_ans3)
-  return valid_ans3
