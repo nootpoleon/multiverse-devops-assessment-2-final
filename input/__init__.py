@@ -52,3 +52,8 @@ def ans3valid(file):
   valid_ans3.insert(0, noblanks[0])
   valid_ans3 = np.array(valid_ans3)
   return valid_ans3
+
+def exportcsv(file):
+  with open('cleansedresults.csv','w', newline='')as f:
+    writer =csv.writer(f)
+    writer.writerows(ans3valid(file))
