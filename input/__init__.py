@@ -1,5 +1,6 @@
 import csv
 import numpy as np
+import pandas as pd
 
 file = open('results.csv')
 
@@ -57,3 +58,8 @@ def exportcsv(file):
   with open('cleansedresults.csv','w', newline='')as f:
     writer =csv.writer(f)
     writer.writerows(ans3valid(file))
+
+def finalresult(file):
+  cleansedfile = open('cleansedresults.csv')
+  readcleansedfile = pd.read_csv(cleansedfile)
+  print(readcleansedfile)
