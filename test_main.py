@@ -104,3 +104,14 @@ def test_validans3():
   
   #Assert
   assert passresult == output
+
+def test_exportcsv():
+  #Arrange
+  output = True
+  
+  #Act
+  path = Path('cleansedresults.csv')
+  passresult = path.is_file()
+  
+  #Assert
+  assert passresult == output
