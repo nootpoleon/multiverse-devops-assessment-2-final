@@ -19,3 +19,12 @@ def drop_duplicate(file):
   return no_duplicates
 
 datanodupl = drop_duplicate(file)
+
+def drop_null(file):
+  remove_na = []
+  for x in datanodupl:
+    if x != ['','','','','','']:
+      remove_na.append(x)
+  return remove_na
+
+datanonull = drop_null(file)
