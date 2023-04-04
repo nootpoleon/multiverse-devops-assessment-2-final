@@ -21,9 +21,12 @@ jobs:
     - name: Update pip
       run: python -m pip install --upgrade pip
     
+      - name: Install Pandas
+      run: python -m pandas install --upgrade pandas
 
     - name: Install Pytest
       run: pip install pytest pytest-cov
 
     - name: Run Pytest
       run: pytest
+      working-directory: main
