@@ -29,4 +29,3 @@ jobs:
 
     - name: Run Pytest
       run: pytest
-      working-directory: main.py
