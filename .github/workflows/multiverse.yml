@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-python@v4
       with:
        python-version: '3.x'
-
+       
     - name: Update pip
       run: python -m pip install --upgrade pip
     
-      - name: Install Pandas
+    - name: Install Pandas
       run: python -m pandas install --upgrade pandas
 
     - name: Install Pytest
