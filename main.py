@@ -8,13 +8,11 @@ from input import ans3valid
 from input import exportcsv
 from input import finalresult
 
-def apprun():
-  if __name__ == "main":
-    file = open('results.csv')
-    data = get_csv(file)
-    data = drop_duplicate(data)
-    data = drop_null(data)
-    data = capitalise_username(data)
-    data = ans3valid(data)
-    data = exportcsv(data)
-    data = finalresult(data)
+file = open('results.csv')
+data = get_csv(file)
+data = drop_duplicate(data)
+data = drop_null(data)
+data = capitalise_username(data)
+data = ans3valid(data)
+data = exportcsv(data)
+data = finalresult(data)
