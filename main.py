@@ -1,4 +1,5 @@
 import pytest
+import pandas as pd
 from input import get_csv
 from input import drop_duplicate
 from input import drop_null
